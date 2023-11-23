@@ -33,7 +33,7 @@ async function initializeDB()  {
 
         await connection.query(`
             CREATE TABLE IF NOT EXISTS gimnasios (
-                id_gym INT UNSIGNED PRIMARY KEY ,
+                id_gym INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
                 direccion VARCHAR(100) NOT NULL,
                 ciudad VARCHAR(100) NOT NULL,
                 created_at datetime NOT NULL DEFAULT NOW()
@@ -47,7 +47,7 @@ async function initializeDB()  {
                 hora enum('9', '10', '11', '14', '15', '17', '18', '19', '20'),
                 semana INT,
                 resolved BOOLEAN DEFAULT false,
-                aforo INT(30),
+                aforo INT,
                 user_id INT UNSIGNED NOT NULL,
                 id_gym INT UNSIGNED NOT NULL,
             
