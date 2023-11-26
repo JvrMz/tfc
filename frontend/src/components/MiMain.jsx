@@ -1,10 +1,14 @@
 
+import Aside from './Aside.jsx'
+import MainSection from './MainSection.jsx'
+
 function MiMain() {
 
     return (
-      <>
-        <h1> Main </h1> 
-      </>
+      <div className='mi-main'>
+        <Aside />
+        <MainSection />
+      </div>
     )
   }
   

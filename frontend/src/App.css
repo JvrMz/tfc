@@ -1,7 +1,4 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -13,6 +10,18 @@ div {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
+}
+
+.mi-main {
+  min-height: 80%;
+  display: flex;
+  width: 80%;
+  margin: auto;
+  background-color: #e1e1e1;
+}
+
+.main-section {
+  width: 100%;
 }
 
 .card {
