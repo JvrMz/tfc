@@ -5,7 +5,8 @@ const {
     addClaseController,
     getClasesController,
     getClaseByIdController,
-    getClaseByDayAndWeekController
+    getClaseByDayAndWeekController,
+    getClasesByWeekController
  } = require('../controllers/clases');
 const authUser = require('../middlewares/authUser.js');
 
@@ -13,6 +14,7 @@ const authUser = require('../middlewares/authUser.js');
 claseRouter.get('/', getClasesController);
 claseRouter.get('/:id_clase', getClaseByIdController);
 claseRouter.get('/dia/:dia/semana/:semana', getClaseByDayAndWeekController);
+claseRouter.get('/semana/:semana', getClasesByWeekController);
 claseRouter.post('/clases', authUser, addClaseController);
 
 

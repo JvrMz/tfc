@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS users (
     apellidos VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
+    cuota enum('dos_dias', 'tres_dias', 'ilimitado'),
     photo VARCHAR(100),
     role enum('admin','normal') DEFAULT 'normal',
     registration_code varchar(100) DEFAULT NULL,
