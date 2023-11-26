@@ -1,7 +1,6 @@
 
 const mysql = require('mysql2/promise');
 
-
 const { DB_HOST, DB_USER, DB_PASS, DB_DATABASE } = process.env;
 
 const dbConfig = {
@@ -26,7 +25,6 @@ async function connectToDBPool () {
                 timezone: 'local',
             });
         }
-        
         return await pool.getConnection();
 
     } catch (error) {

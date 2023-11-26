@@ -2,9 +2,7 @@ const  getClaseDayAndWeek = require('../../helpers/getClaseDayAndWeek.js');
 
 async function getClasesByDayAndWeekController(req, res, next) {
     const { dia, semana } = req.params;
-    console.log('probando');
-    console.log(dia);
-    console.log(semana);
+
 
     try {
         const results = await getClaseDayAndWeek(dia, semana);

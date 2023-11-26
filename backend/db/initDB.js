@@ -43,12 +43,12 @@ async function initializeDB()  {
         await connection.query(`
             CREATE TABLE IF NOT EXISTS clases (
                 id_clase INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+                mes enum('enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'),
                 dia enum('lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'),
                 hora enum('9', '10', '11', '14', '15', '17', '18', '19', '20'),
                 semana INT,
                 resolved BOOLEAN DEFAULT false,
-                aforo INT,
-                user_id INT UNSIGNED NOT NULL,
+                aforo INT DEFAULT 0,
                 id_gym INT UNSIGNED NOT NULL,
             
                 CONSTRAINT fk_gym_clase

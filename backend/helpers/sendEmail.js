@@ -11,7 +11,7 @@ const transport = nodemailer.createTransport({
 });
 
 async function sendEmail (email, subject, emailHtml) {
-    console.log('desde sendemail');
+
     const emailOptions = {
         from: process.env.SMTP_USER,
         to: email,

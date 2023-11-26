@@ -3,6 +3,7 @@ const { sendQuery } = require('../../db/connectToDB.js');
 
 require('dotenv').config();
 
+
 async function addClaseController (req, res, next) {
 
     try {
