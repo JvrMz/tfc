@@ -2,9 +2,9 @@
   text-align: center;
 }
 
-div {
+/* div {
   min-height: 100vh;
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
@@ -24,10 +24,35 @@ div {
   width: 100%;
 }
 
-.card {
-  padding: 2em;
+/* CLaseList */
+
+.lista-semana {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 5 columnas para los 5 días de la semana */
+  gap: 10px; /* Espacio entre las columnas */
 }
 
-.read-the-docs {
-  color: #888;
+/* Clase */
+
+.clase {
+  /* max-height: 10px; */
+  max-height: 50px; 
+  overflow: hidden; 
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Semana */
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 5 columnas para los 5 días de la semana */
+  gap: 10px; /* Espacio entre las columnas */
+}
+
+.day {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
 }
