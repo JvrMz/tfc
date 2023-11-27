@@ -131,6 +131,7 @@ li a {
   right: 0;
   bottom: 0;
   opacity: 0.2; 
+  pointer-events: none;
 } 
 
 
@@ -149,7 +150,7 @@ nav a {
   color: #ccc;
 }
 
-/* CLaseList */h
+/* CLaseList */
 
 .lista-semana {
   display: grid;
@@ -205,3 +206,72 @@ nav a {
     /* Puedes ajustar el espaciado o cualquier otro estilo para dispositivos móviles aquí */
   }
 }
+
+
+/* Login */
+
+
+.login {
+  min-height: 80vh;
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*.login form {
+  width: 30%;
+  gap: 15px;
+} */
+
+/* .login form {
+  max-width: 400px;
+  margin: auto;
+  padding: 30px;
+} */
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+} 
+
+button#login {
+  width: 100%;
+  padding: 10px;
+  background-color: #53b84d;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button#nueva_cuenta {
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button#login:hover {
+  background-color: #24d32d;
+}
+
+button#nueva_cuenta:hover {
+  background-color: #2980b9;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 20px;
+}
+ 

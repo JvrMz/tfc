@@ -7,6 +7,7 @@ function Nav() {
         <nav>
             <a href="/">Home</a>
             <a href="">Gimnasios</a>
+            <a href="/login">Area usuario</a>
             <a href="/usuarios">Area usuario</a>
             {/* <Link to="/">Home</Link>
             <Link to="/search">Búsqueda por gimnasio</Link>
