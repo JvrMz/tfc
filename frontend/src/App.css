@@ -12,30 +12,88 @@
   }
 }
 
+
+/* Home */
+
+.spinner {
+  padding: 15px;
+  background-color: #e1e1e1;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #09738a;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1.5s linear infinite;
+  margin: auto;    
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mi Main */
+
 .aside {
   width: 15%;
 }
 
 .mi-main {
   min-height: 80%;
+  position: relative;
   padding: 15px;
   display: flex;
   width: 90%;
   margin: auto;
+  
   background-color: #e1e1e1;
-}
+} 
+
+.mi-main::before {
+  content: '';
+  background-image: url('./assets/ring-boxeo-gimnasio.jpg');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2; 
+} 
+
 
 .main-section {
   width: 100%;
 }
 
-/* CLaseList */
+/* Nav */
+nav {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.1rem;
+}
+
+nav a {
+  color: #ccc;
+}
+
+/* CLaseList */h
 
 .lista-semana {
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* 5 columnas para los 5 días de la semana */
   gap: 10px; /* Espacio entre las columnas */
 }
+
+.descanso {
+  font-size: 1.3rem;
+  padding: 10px;
+  font-style: oblique;
+  color: green;
+
+}
+
 
 /* Clase */
 
@@ -44,9 +102,15 @@
   max-height: 100px; 
   /* overflow: hidden;  */
   border: 1px solid #ccc;
-
   text-align: center;
   border-radius: 5px;
+}
+
+.clase-cabecera {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-height: 30px;
 }
 
 /* Semana */

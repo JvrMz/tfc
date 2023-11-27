@@ -5,18 +5,17 @@ import getClasesMesSemana from '../helpers/getClasesMesSemana';
 function ClaseList({ semana, mes, dia }) {
   const [clases, setClases] = useState([]);
 
-  const hora = {clases};
-  console.log(hora);
 
   useEffect(() => {
     getClasesMesSemana(mes, semana).then(data => {
-      // Filtrar las clases solo para el día específico
+  
       const clasesDia = data.filter(clase => clase.dia.toLowerCase() === dia.toLowerCase());
       setClases(clasesDia);
     });
   }, [mes, semana, dia]);
 
   return (
+    <>
     <div>
       <h3>{dia}</h3>
       {clases.length <= 0 
@@ -24,6 +23,7 @@ function ClaseList({ semana, mes, dia }) {
         : clases.map(clase => <Clase key={clase.id_clase} clase={clase} />)
       }
     </div>
+     </>
   );
 }
 
