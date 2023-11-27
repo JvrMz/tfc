@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import IncidentsList from '../components/IncidentsList.jsx';
-import './Home.css';
+import horario from '../assets/horario.png';
+
 
 const Home = () => {
     const [loading, setLoading] = useState(true); 
@@ -12,10 +12,10 @@ const Home = () => {
     }, []);
 
     return (
-        <>
+        <div className='bienvenida'>
             <div>
                 <p className='p1'>Bienvenid@ a AppBoxeo</p>
-                <p className='p2'>Puedes encontrar información de nuestros gimnasios</p>
+                <p className='p2'>Consulta nuestros horarios</p>
             </div>
     
             <div>
@@ -24,11 +24,11 @@ const Home = () => {
                 ? <div className='spinner'></div>    
                 : 
                 <section>
-                    <img src="horario.png" alt="cargando horario" />
+                    <img src={horario} alt="cargando horario" className="horario-home" />
                 </section>
                 }
             </div>
-        </>
+        </div>
     );
 };
 

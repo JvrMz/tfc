@@ -1,4 +1,4 @@
-import Semana from './Semana.jsx'
+import Semana from '../components/Semana.jsx'
 
 function MainSection() {
 

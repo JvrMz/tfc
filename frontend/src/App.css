@@ -6,14 +6,85 @@
   min-height: 100vh;
 } */
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* header */
+
+.header {
+  background-color: black;
+  padding: 10px;
+
+}
+.header h1 {
+  color: white;
+  margin: 0;
+}
+
+/* Footer */
+
+.footer {
+  background-color: black;
+  font-style: oblique;
+  height: 80px;
+}
+
+.footer-lista {
+  list-style: none;
+  text-align: center;
+  font-size: 14px;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 15px;
+}
+
+li a {
+  text-decoration: none;
+  color: #e1e1e1;
+  display: block;
+}
+
+/* Home */
+.bienvenida {
+  min-height: 80vh;
+  display:flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.p1 {
+  opacity: 0;
+  color: #09738a;
+  transform: translateX(-300px);
+  animation: mostrar 2s forwards;
+}
+
+@keyframes mostrar {
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+.p2 {
+  opacity: 0;
+  color: #09738a;
+  transform: translateX(+300px);
+  animation: mostrar 2s forwards;
+}
+
+@keyframes mostrar {
+  to {
+      opacity: 1;
+      transform: translateX(0);
   }
 }
 
+.horario-home {
+  max-width: 100%;
+  height: 'auto';
 
-/* Home */
+}
 
 .spinner {
   padding: 15px;
