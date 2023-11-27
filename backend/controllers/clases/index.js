@@ -5,6 +5,7 @@ const getClaseByIdController = require('./getClaseByIdController');
 const getClaseByDayAndWeekController = require('./getClaseByDayAndWeekController');
 const getClasesByWeekController = require('./getClasesByWeekController');
 const getClasesByDayController = require('./getClasesByDayController');
+const getClasesMonthAndWeekController = require('./getClasesMonthAndWeekController');
 
 module.exports = {
     addClaseController,
@@ -12,5 +13,6 @@ module.exports = {
     getClaseByIdController,
     getClaseByDayAndWeekController,
     getClasesByWeekController,
-    getClasesByDayController
+    getClasesByDayController,
+    getClasesMonthAndWeekController
 };

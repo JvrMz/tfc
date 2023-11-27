@@ -1,51 +1,26 @@
-
-// import { useState, useEffect } from 'react';
-// import Clase from './Clase.jsx';
-// import getClasesSemana from '../helpers/getClasesSemana.js';
-
-// function ClaseList () {
-//     const [clases, setClases] = useState([]);
-
-//     useEffect(() => {
-//         getClasesSemana().then(data => setClases(data));
-        
-//     }, []); 
-
-//     return (
-         
-            
-//         clases.length <= 0
-//         ? <p>No se encuentran clases para mostrar</p>
-//         :<>
-//             <div className='lista-semana'>
-//                 {clases?.map(clase => <Clase key={clase.id_clase} clase={clase} />)}
-//             </div>
-
-//         </>
-            
-        
-//     );
-// }
-
-// export default ClaseList;
-
 import { useState, useEffect } from 'react';
 import Clase from './Clase';
-import getClasesDia from '../helpers/getClasesDia';
+import getClasesMesSemana from '../helpers/getClasesMesSemana';
 
-function ClaseList({ day }) {
+function ClaseList({ semana, mes, dia }) {
   const [clases, setClases] = useState([]);
-    
-  useEffect(() => {
 
-    getClasesDia(day).then(data => setClases(data));
-  }, [day]);
+  const hora = {clases};
+  console.log(hora);
+
+  useEffect(() => {
+    getClasesMesSemana(mes, semana).then(data => {
+      // Filtrar las clases solo para el día específico
+      const clasesDia = data.filter(clase => clase.dia.toLowerCase() === dia.toLowerCase());
+      setClases(clasesDia);
+    });
+  }, [mes, semana, dia]);
 
   return (
     <div>
-      <h3>{day}</h3>
-      {clases.length <= 0
-        ? <p>No hay clases para {day}</p>
+      <h3>{dia}</h3>
+      {clases.length <= 0 
+        ? <p>No hay clases para {dia}</p>
         : clases.map(clase => <Clase key={clase.id_clase} clase={clase} />)
       }
     </div>
@@ -53,4 +28,3 @@ function ClaseList({ day }) {
 }
 
 export default ClaseList;
-
