@@ -3,7 +3,7 @@ function Aside() {
 
     return (
       <div className="aside">
-        Aside
+        <h2 className="aside-titulo">Aside</h2>
       </div>
     )
   }

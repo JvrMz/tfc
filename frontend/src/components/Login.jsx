@@ -1,14 +1,12 @@
 import { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const baseURL = import.meta.env.VITE_API_URL;
 import { Link } from 'react-router-dom'; 
 
 
-
-
-
 function Login () {
-
+    const navigate = useNavigate(); 
     const [credenciales, setCredenciales] = useState({
         email: '',
         password: '',
@@ -42,7 +40,6 @@ function Login () {
             return;
         }
  
-        
 
         try {
 
@@ -53,6 +50,7 @@ function Login () {
 
             const resp = await axios.post(`${baseURL}/users/login`, bodyToSend);
             console.log(resp)
+            navigate('/registro');
         } catch (error) {
             console.error(error);
             console.error(error.resp.data.error);
@@ -61,10 +59,9 @@ function Login () {
 
     return (
         <>
-            <div className='login'>
+            <div className='form'>
                 <form onSubmit={handleSubmit}>
                     <h2>Login</h2>  
-                {console.log('desde form')}
                     <input 
                         type="email"
                         name="email"

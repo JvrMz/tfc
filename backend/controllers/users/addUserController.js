@@ -5,7 +5,7 @@ const { sendQuery } = require('../../db/connectToDB.js');
 const sendEmail = require('../../helpers/sendEmail.js');
 
 async function addUserController (req, res) {
-
+    console.log(req.body);
     try {
         const { username, nombre, apellidos, email, password } = req.body;
 
