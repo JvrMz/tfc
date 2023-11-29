@@ -21,7 +21,7 @@ const Home = () => {
     return (
         <div className={`bienvenida ${agrandar ? 'agrandar' : ''}`}>
             <div>
-                <p className='p1'>Bienvenid@ a AppBoxeo</p>
+                <p className='p1'>Bienvenid@ a Eko</p>
                 <p className='p2'>Consulta nuestros horarios</p>
             </div>
     

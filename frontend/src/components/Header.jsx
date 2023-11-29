@@ -1,9 +1,12 @@
-
+import { Link } from 'react-router-dom';
 function Header() {
 
   return (
     <div className="header">
-      <h1> AppBoxeo </h1> 
+      <Link to="/">
+        <img className="aside-logo" src="../logo.svg" alt="Mi Archivo SVG" />
+      </Link>
+      <h1> Eko </h1>
     </div>
   )
 }

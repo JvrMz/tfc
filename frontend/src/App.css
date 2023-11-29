@@ -5,13 +5,16 @@
 
 /* header */
 
-.header {
-  background-color: black;
-  padding: 10px;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700;900&family=Roboto+Condensed:ital,wght@0,700;1,300&family=Shadows+Into+Light&display=swap');
 
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header h1 {
-  color: white;
+  font-family: 'Shadows Into Light', cursive;
+  color: #423f3f;
   margin: 0;
 }
 
@@ -43,6 +46,9 @@ li a {
 }
 
 /* Home */
+
+
+
 .bienvenida {
   min-height: 80vh;
   display:flex;
@@ -51,9 +57,14 @@ li a {
   justify-content: center;
   align-items: center;
 }
+.bienvenida h2, .encabezado{
+  color: #09738a;
+}
 .p1 {
   opacity: 0;
   color: #09738a;
+  font-weight: 700;
+  font-size: 1.3rem;
   transform: translateX(-300px);
   animation: mostrar 2s forwards;
 }
@@ -67,6 +78,8 @@ li a {
 .p2 {
   opacity: 0;
   color: #09738a;
+  font-weight: 700;
+  font-size: 1.3rem;
   transform: translateX(+300px);
   animation: mostrar 2s forwards;
 }
@@ -84,8 +97,8 @@ li a {
   transition: transform 0.3s ease;
 }
 .horario-home.agrandar {
-  transform: scale(1.5); 
-  cursor: pointer; 
+  transform: scale(1.5);
+  cursor: pointer;
 }
 
 .spinner {
@@ -97,7 +110,7 @@ li a {
   width: 50px;
   height: 50px;
   animation: spin 1.5s linear infinite;
-  margin: auto;    
+  margin: auto;
 }
 
 @keyframes spin {
@@ -107,8 +120,8 @@ li a {
 
 /* Mi Main */
 
-.aside-titulo {
-  width: 15%;
+.aside-logo {
+
   position: sticky;
   top: 4rem;
 }
@@ -122,7 +135,7 @@ li a {
   border-radius: 10px;
   margin: auto;
   background-color: #e1e1e1;
-} 
+}
 
 .mi-main::before {
   content: '';
@@ -135,10 +148,10 @@ li a {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0.2; 
+  opacity: 0.2;
   pointer-events: none;
-  
-} 
+
+}
 
 
 .main-section {
@@ -152,6 +165,9 @@ li a {
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 10px;
+}
+.cuotas-container h2 {
+  color: #09738a;
 }
 
 .cuota-card {
@@ -188,9 +204,13 @@ nav {
   padding: 1.1rem;
 }
 
+nav a {
+  color: #09738a;
+}
+
 .menu-icon {
   cursor: pointer;
-  display: none; 
+  display: none;
   background-color: #407c8a;
 }
 
@@ -205,6 +225,7 @@ nav {
   display: flex;
   justify-content: space-around;
   width: 80%;
+  
 }
 
 /* Estilos responsivos para pantallas más pequeñas */
@@ -245,7 +266,7 @@ nav {
 
 .clase {
   /* max-height: 10px; */
-  max-height: 100px; 
+  max-height: 100px;
   /* overflow: hidden;  */
   border: 1px solid #ccc;
   text-align: center;
@@ -296,7 +317,14 @@ nav {
 .form form {
   width: 35%;
   /* gap: 15px; */
-} 
+}
+
+
+
+.errorMessage {
+  font-size: 0.8rem;
+  color: red;
+}
 
 /* .login form {
   max-width: 400px;
@@ -316,7 +344,7 @@ input, select {
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
-} 
+}
 
 button#login {
   width: 100%;
@@ -348,4 +376,4 @@ hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 20px;
 }
- 
+

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Nav() {
@@ -19,7 +20,6 @@ function Nav() {
           <Link to="/">Home</Link>
           <Link to="">Gimnasios</Link>
           <Link to="/login">Login</Link>
-          <Link to="/usuarios">Área usuario</Link>
         </div>
       </nav>
     );

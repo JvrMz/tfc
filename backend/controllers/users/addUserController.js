@@ -15,7 +15,7 @@ async function addUserController (req, res) {
         const subject = 'Activar tu usario en AppBoxeo 😃';
         const emailHTML = `
         <h1>¡Bienvenid@ a AppBoxeo ${username}!</h1>
-        <img src="https://img.freepik.com/foto-gratis/par-guantes-deporte-boxeo_23-2150367663.jpg?w=900&t=st=1700696268~exp=1700696868~hmac=378771847a76a37c17e52118519182dfca7fb55845cbef654cb1ebe0a24dda48">
+        <img src="https://img.freepik.com/foto-gratis/chica-kickboxer_654080-1885.jpg?w=996&t=st=1701282201~exp=1701282801~hmac=c2976d2978e13d226c6089dfd4f223fb33d6ea3d1242f72d7ba6e7d3cba1f13a">
 
         <p>Por favor, activa tu usario dando en el siguiente enlace 👉 <a href="http://localhost:${process.env.PORT}/users/activate/${registrationCode}">Activar tu usuario</a></p>
         `;

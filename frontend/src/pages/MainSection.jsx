@@ -4,7 +4,7 @@ function MainSection() {
 
     return (
       <div className="main-section">
-        MainSection
+        <h2 className='encabezado'>Reseva tus clases</h2>
         <Semana />
       </div>
     )

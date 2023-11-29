@@ -7,8 +7,7 @@ function Semana() {
   const diaSemana = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
   return (
     <>
-      <h2> Semana {semana} </h2> 
-      <p>Clases disponibles</p>
+      <h2 className='encabezado'> Semana {semana} </h2> 
       <div className="lista-semana">
         {diaSemana.map((dia, index) => (
           <ClaseList key={index} dia={dia} semana={semana} mes={mes} />
