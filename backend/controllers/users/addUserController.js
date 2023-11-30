@@ -12,12 +12,12 @@ async function addUserController (req, res) {
         // Creamos un código de registro aleatorio
         const registrationCode = uuidv4();
 
-        const subject = 'Activar tu usario en AppBoxeo 😃';
+        const subject = 'Activar tu usario en Eko Boxeo 😃';
         const emailHTML = `
-        <h1>¡Bienvenid@ a AppBoxeo ${username}!</h1>
+        <h1>¡Bienvenid@ a Eko gimnasio de boxeo ${username}!</h1>
         <img src="https://img.freepik.com/foto-gratis/chica-kickboxer_654080-1885.jpg?w=996&t=st=1701282201~exp=1701282801~hmac=c2976d2978e13d226c6089dfd4f223fb33d6ea3d1242f72d7ba6e7d3cba1f13a">
 
-        <p>Por favor, activa tu usario dando en el siguiente enlace 👉 <a href="http://localhost:${process.env.PORT}/users/activate/${registrationCode}">Activar tu usuario</a></p>
+        <p>Por favor, activa tu usario dando en el siguiente enlace 👉 <a href="http://localhost:5173/reset/${registrationCode}">Activar tu usuario</a></p>
         `;
 
         await sendEmail(email, subject, emailHTML);

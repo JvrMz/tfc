@@ -5,6 +5,7 @@ import Home from '../pages/Home';
 import Aside from './Aside.jsx'
 import Login from './Login.jsx'
 import Registro from './Registro.jsx'
+import Reset from './Reset.jsx'
 import MainSection from '../pages/MainSection.jsx'
 
 function MiMain() {
@@ -18,6 +19,7 @@ function MiMain() {
             <Route path="/" element={<Home/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/registro" element={<Registro/>} />
+            <Route path="/reset/:registrationCode" element={<Reset/>} />
             <Route path="/usuarios" element={<MainSection/>} />
 
           </Routes>

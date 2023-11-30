@@ -12,7 +12,6 @@ const Registro = () => {
     const navigate = useNavigate(); 
 
     const [datosUsuario, setDatosUsuario] = useState({
-        username: '',
         nombre: '',
         apellidos: '',
         email: '',
@@ -34,7 +33,6 @@ const Registro = () => {
 
     // if (photo) {
         const formData = new FormData();
-        formData.append('username', datosUsuario.username);
         formData.append('nombre', datosUsuario.nombre);
         formData.append('apellidos', datosUsuario.apellidos);
         formData.append('email', datosUsuario.email);
@@ -62,13 +60,6 @@ const Registro = () => {
             <div className='form'>
                 <form onSubmit={handleSubmit}>
                     <h2>Registrar nuevo usuario</h2>
-                    <input
-                        type="text"
-                        name="username"
-                        placeholder="Username"
-                        value={datosUsuario.username}
-                        onChange={handleChange}
-                    />
                     <input
                         type="text"
                         name="nombre"
