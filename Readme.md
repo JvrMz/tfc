@@ -17,6 +17,8 @@ Aplicación para la gestión de las reservas e inscripciones de un gimnasio de b
 
 - Users
 
+    - GET /users/ ,  Para obtener datos de los usuarios.
+    - GET /users/:id ,  Para obtener datos de un usuario determinado.
     - POST /users/ ,  Para el registro de nuevos usuarios.
     - POST /users/reset ,  Para establecer una contraseña de nuevo usuario y activar la cuenta.
     - POST /users/login ,  Para el login de los usuarios registrados.
