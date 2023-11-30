@@ -10,7 +10,7 @@ function Semana() {
       <h2 className='encabezado'> Semana {semana} </h2> 
       <div className="lista-semana">
         {diaSemana.map((dia, index) => (
-          <ClaseList key={index} dia={dia} semana={semana} mes={mes} />
+          <ClaseList key={index} dia={dia} semana={semana} mes={mes}  />
         ))}
       </div>
     </>
