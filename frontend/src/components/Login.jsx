@@ -33,7 +33,7 @@ function Login () {
         e.preventDefault();
 
         const validations = {};
-
+        console.log(validations);
         validations.email = credenciales.email.trim() !== '';
         validations.password = credenciales.password.trim() !== '';
         setValidation(validations);
@@ -58,7 +58,6 @@ function Login () {
                 navigate('/usuarios');
             }
         } catch (error) {
-            console.error(error.response.data);
             setError(error.response.data || 'Error de inicio de sesión');
         }
     };
@@ -87,7 +86,7 @@ function Login () {
                         />
                     { !validation.password && <span className='errorMessage'>Este campo es obligatorio</span>}
                     <br/>
-                    {error && <span className='errorMessage'>{error}</span>}
+                    {(error && validation.email && validation.password) && <span className='errorMessage'>{error}</span>}
                     <br/>
                     <button id='login' type="submit">Iniciar sesión</button>
                     <hr/>

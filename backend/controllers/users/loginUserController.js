@@ -10,6 +10,10 @@ async function loginUserController (req, res, next) {
 		const [result] = await sendQuery(
 			'SELECT * FROM users WHERE email = ?', [email]
 			);
+			
+		if (!result) {
+			res.status(401).send('Credenciales invalidas');
+		} 
 
 		const passwordmatch = await bcrypt.compare(password, result.password);
 		
@@ -17,9 +21,6 @@ async function loginUserController (req, res, next) {
 			return res.status(401).send('Usuario y login incorrectos');
 		}
 	
-		if (!result) {
-			res.status(401).send({error: 'Credenciales invalidas' });
-		} 
 
 		const infoUser = {
 			user_id: result.id,

@@ -7,12 +7,11 @@ USE gymDB;
 DROP TABLE IF EXISTS users;
 CREATE TABLE IF NOT EXISTS users (
 	id_user INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(50) NOT NULL UNIQUE,
     nombre VARCHAR(50) NOT NULL,
     apellidos VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    cuota enum('dos_dias', 'tres_dias', 'ilimitado'),
+    cuota enum('dos', 'tres', '6'),
     photo VARCHAR(100),
     role enum('admin','normal') DEFAULT 'normal',
     registration_code varchar(100) DEFAULT NULL,
