@@ -1,5 +1,8 @@
 require('dotenv').config();
-const { connectToDBPool } = require('../../db/connectToDB.js');
+const bcrypt = require('bcrypt');
+
+
+const { connectToDBPool } = require('./connectToDB.js');
 
 async function generarSemanas(id_gym)  {
 
@@ -20,9 +23,22 @@ async function generarSemanas(id_gym)  {
             }
         }
     }
-    console.log(clasesAInsertar);
+
+    const passwordAdmin = '12345';
+    const hashedPassword = await bcrypt.hash(passwordAdmin, 10);
+
+    /* Iniciar aplicación, es decir, crear un gimnasio y un superusuario */
+    const gym = ['Avenida albufera 12', 'Madrid'];
+    const user = ['Javier', 'Maiz', 'ekoboxeo@gmail.com', hashedPassword, 'admin', '1' ];
+
     try {
         let connection = await connectToDBPool(); // tengo la conexion
+
+        await connection.query(`
+        INSERT INTO gimnasios
+        (direccion, ciudad)
+        VALUES (?);
+        `,[gym]);
 
         await connection.query(`
         INSERT INTO clases
@@ -30,8 +46,16 @@ async function generarSemanas(id_gym)  {
         VALUES ?;
         `,[clasesAInsertar]);
 
+
+        await connection.query(`
+        INSERT INTO users
+        (nombre, apellidos, email, password, role, isActive)
+        VALUES (?);
+        `,[user]);
+
   
     } catch (error) {
+        console.error(error);
         throw new Error(error);
     } finally {
         if (connection) connection.release();

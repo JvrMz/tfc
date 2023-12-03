@@ -1,34 +1,36 @@
 
-const bcrypt = require('bcrypt');
 const { v4: uuidv4 } = require('uuid');
 const { sendQuery } = require('../../db/connectToDB.js');
 const sendEmail = require('../../helpers/sendEmail.js');
 
 async function addUserController (req, res) {
-    console.log(req.body);
+    
     try {
-        const { username, nombre, apellidos, email, password } = req.body;
+        const { nombre, apellidos, email, cuota } = req.body;
+
+        if(!nombre || !apellidos || !email ){
+            return res.status(401).send('Todos los campos son necesarios');
+        }
 
         // Creamos un código de registro aleatorio
         const registrationCode = uuidv4();
-
-        const subject = 'Activar tu usario en Eko Boxeo 😃';
+        // Mail para activar la cuenta y establecer la contraseña del usuario
+        const subject = 'Activar tu usuario en Eko Boxeo 😃';
         const emailHTML = `
-        <h1>¡Bienvenid@ a Eko gimnasio de boxeo ${username}!</h1>
-        <img src="https://img.freepik.com/foto-gratis/chica-kickboxer_654080-1885.jpg?w=996&t=st=1701282201~exp=1701282801~hmac=c2976d2978e13d226c6089dfd4f223fb33d6ea3d1242f72d7ba6e7d3cba1f13a">
+        <h1>¡Bienvenid@ a Eko ${nombre} ${apellidos}!</h1>
+        <h2>Gimnasio de boxeo</h2>
+        <img src="https://i.postimg.cc/vHkzgZPp/logo.png">
 
-        <p>Por favor, activa tu usario dando en el siguiente enlace 👉 <a href="http://localhost:5173/reset/${registrationCode}">Activar tu usuario</a></p>
+        <p>Por favor, activa tu usario y establece tu contraseña en el siguiente enlace 👉 <a href="http://localhost:5173/reset/${registrationCode}">Activar tu usuario</a></p>
         `;
 
         await sendEmail(email, subject, emailHTML);
-
-        const hashedPass = await bcrypt.hash(password, 10);
         
         const results = await sendQuery(`
-            INSERT INTO users (username, nombre, apellidos, email, password, registration_code)
-            VALUES (?, ?, ?, ?, ?, ?)
+            INSERT INTO users ( nombre, apellidos, email, cuota, registration_code)
+            VALUES ( ?, ?, ?, ?, ?)
             `,
-            [username, nombre, apellidos, email, hashedPass, registrationCode]
+            [nombre, apellidos, email, cuota, registrationCode]
         );
         
         res.send({ 
@@ -37,7 +39,7 @@ async function addUserController (req, res) {
             mensaje: 'Usuario registrado con éxito.' });
 
     } catch (error) {
-        res.status(error.httpStatus).json({ error: error.message });
+        return res.status(500).send('Error en el registro');
     } 
 };
 

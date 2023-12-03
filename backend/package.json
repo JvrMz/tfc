@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "database": "node db/initDB.js",
+    "database": "node db/initDB.js && node db/intoDB.js",
     "start": "node index.js"
   },
   "keywords": [],

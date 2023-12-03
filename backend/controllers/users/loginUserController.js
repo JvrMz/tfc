@@ -5,7 +5,7 @@ const { sendQuery } = require('../../db/connectToDB.js');
 async function loginUserController (req, res, next) {
 
 	const { email, password } = req.body;
-
+	console.log(password);
 	try {
 		const [result] = await sendQuery(
 			'SELECT * FROM users WHERE email = ?', [email]
@@ -24,7 +24,7 @@ async function loginUserController (req, res, next) {
 
 		const infoUser = {
 			user_id: result.id,
-			username: result.username,
+			name: result.name,
 		};
 
 		const token = jwt.sign(infoUser, process.env.JWT_SECRET, { expiresIn: '1w'});
@@ -33,7 +33,7 @@ async function loginUserController (req, res, next) {
 
 		res.send({
 			ok: true,
-			username: result.username,
+			name: result.name,
 			data: token, 
 			role: result.role,
 			mensaje: 'Se ha iniciado sesion' });

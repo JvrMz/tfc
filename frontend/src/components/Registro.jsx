@@ -11,12 +11,16 @@ const Registro = () => {
     // const [photo, setPhoto] = useState(null);
     const navigate = useNavigate(); 
 
+    const [error, setError] = useState('');
+
     const [datosUsuario, setDatosUsuario] = useState({
         nombre: '',
         apellidos: '',
         email: '',
-        password: ''
+        cuota: ''
     });
+
+    console.log(datosUsuario);
 
     const handleChange = (e) => {
         setDatosUsuario({
@@ -26,7 +30,6 @@ const Registro = () => {
         // setPhoto(e.target.files[0]);
     };
 
-    console.log(datosUsuario);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -36,21 +39,21 @@ const Registro = () => {
         formData.append('nombre', datosUsuario.nombre);
         formData.append('apellidos', datosUsuario.apellidos);
         formData.append('email', datosUsuario.email);
-        formData.append('password', datosUsuario.password);
+        formData.append('cuota', datosUsuario.cuota);
         // formData.append('image', photo);
 
         // Ver si pasar la foto de perfil
         try {
             const response = await axios.post(`${baseURL}/users`, datosUsuario );
-            console.log(response.data.mensaje);
+            console.log(response.data);
             setTimeout(() => {
                 navigate('/registro');
             }, 2000);
 
-            console.log(response.data.mensaje);
+            console.log(response.data);
         } catch (error) {
-
             console.error(error);
+            setError(error.response.data || 'Error en el registro de sesión');
         }
     // }
     };
@@ -60,6 +63,7 @@ const Registro = () => {
             <div className='form'>
                 <form onSubmit={handleSubmit}>
                     <h2>Registrar nuevo usuario</h2>
+                    {error && <span className='errorMessage'>{error}</span>}
                     <input
                         type="text"
                         name="nombre"
@@ -83,18 +87,15 @@ const Registro = () => {
                         onChange={handleChange}
                     />
 
-                    <input
-                        type="password"
-                        name="password"
-                        placeholder="Contraseña"
-                        value={datosUsuario.password}
-                        onChange={handleChange}
-                    />
                     <label htmlFor="">Cuota: 
-                        <select name="cuota" id="">
-                            <option value="">2 dias</option>
-                            <option value="">3 dias</option>
-                            <option value="">ilimitado</option>
+                        <select 
+                        name="cuota"                        
+                        value={datosUsuario.cuota}
+                        onChange={handleChange}>
+                            <option value="">Seleccione</option>
+                            <option value="dos">2 dias</option>
+                            <option value="tres">3 dias</option>
+                            <option value="seis">ilimitado</option>
                         </select>
                     </label>
                     <input
@@ -103,7 +104,7 @@ const Registro = () => {
                         onChange={handleChange}
                         accept="image/*"
                     />
-                    <button id="login" type="submit">Registrarse</button>
+                    <button id="login" type="submit">Registrar</button>
                 </form>
             </div>
         </>
