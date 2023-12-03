@@ -24,7 +24,8 @@ async function loginUserController (req, res, next) {
 
 		const infoUser = {
 			user_id: result.id,
-			name: result.name,
+			nombre: result.nombre,
+			cuota: result.cuota
 		};
 
 		const token = jwt.sign(infoUser, process.env.JWT_SECRET, { expiresIn: '1w'});
@@ -33,9 +34,10 @@ async function loginUserController (req, res, next) {
 
 		res.send({
 			ok: true,
-			name: result.name,
+			nombre: result.nombre,
 			data: token, 
 			role: result.role,
+			cuota: result.cuota,
 			mensaje: 'Se ha iniciado sesion' });
 	} catch (error) {
 		next(error);

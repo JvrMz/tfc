@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../context/UserProvider';
 import axios from 'axios';
 const baseURL = import.meta.env.VITE_API_URL;
 
@@ -7,6 +8,8 @@ const baseURL = import.meta.env.VITE_API_URL;
 
 function Login () {
     const navigate = useNavigate(); 
+    const { user, setUser } = useContext(UserContext);
+
     const [credenciales, setCredenciales] = useState({
         email: '',
         password: '',
@@ -15,6 +18,10 @@ function Login () {
         email: true,
         password: true
     });
+
+    useEffect(() => {
+        localStorage.setItem('user', JSON.stringify(user));
+    }, [user]);
 
     const [error, setError] = useState('');
 
@@ -51,6 +58,17 @@ function Login () {
 
             const resp = await axios.post(`${baseURL}/users/login`, bodyToSend);
             // Si la respuesta informa que el usuario es admin podrá registrar más usuarios. Sino puede gestionar sus clases para inscribirse
+
+            console.log(resp.data);
+            if (resp.data.ok) {
+                setUser({
+                    username: resp.data.username,
+                    token: resp.data.data,
+                    role: resp.data.role,
+                    cuota: resp.data.cuota
+                });
+            }
+
             if(resp.data.role == 'admin'){
                 navigate('/registro');
             }
