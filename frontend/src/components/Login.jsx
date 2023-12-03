@@ -40,7 +40,7 @@ function Login () {
         e.preventDefault();
 
         const validations = {};
-        console.log(validations);
+      
         validations.email = credenciales.email.trim() !== '';
         validations.password = credenciales.password.trim() !== '';
         setValidation(validations);
@@ -59,7 +59,7 @@ function Login () {
             const resp = await axios.post(`${baseURL}/users/login`, bodyToSend);
             // Si la respuesta informa que el usuario es admin podrá registrar más usuarios. Sino puede gestionar sus clases para inscribirse
 
-            console.log(resp.data);
+
             if (resp.data.ok) {
                 setUser({
                     username: resp.data.username,
