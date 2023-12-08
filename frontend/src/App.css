@@ -133,6 +133,20 @@ li a {
   100% { transform: rotate(360deg); }
 }
 
+
+/* Aside */
+
+.aside {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+
+}
+.form-aside {
+  width: 30%;
+}
+
+
 /* Mi Main */
 
 .mi-main {
@@ -259,8 +273,8 @@ nav a {
 
 .lista-semana {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 5 columnas para los 5 días de la semana */
-  gap: 10px; /* Espacio entre las columnas */
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px; 
 }
 
 .descanso {
@@ -314,8 +328,7 @@ nav a {
 /* Responsive de la tabla */
 @media only screen and (max-width: 600px) {
   .lista-semana {
-    grid-template-columns: repeat(1, 1fr); /* Cambiar a una sola columna */
-    /* Puedes ajustar el espaciado o cualquier otro estilo para dispositivos móviles aquí */
+    grid-template-columns: repeat(1, 1fr); 
   }
 }
 

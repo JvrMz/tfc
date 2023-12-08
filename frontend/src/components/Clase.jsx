@@ -8,6 +8,7 @@ function Clase( {clase, seleccionada, onSelect} ) {
     const [count, setCount] = useState(0);
 
     const handleClick = () => {
+      console.log('Handle Click:', clase.id_clase);
       if (count < 30 && !seleccionada) {
         setCount((count) => count + 1);
         onSelect(clase.id_clase);

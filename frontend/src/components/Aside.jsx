@@ -1,4 +1,5 @@
 // import { Link } from 'react-router-dom';
+import MesYSemana from "./MesySemana";
 
 
 function Aside() {
@@ -8,7 +9,7 @@ function Aside() {
         {/* <Link to="/">
           <img className="aside-logo" src="../logo.svg" alt="Mi Archivo SVG" />
         </Link> */}
-        Opciones de usuario
+        <MesYSemana />
         
       </div>
     )
