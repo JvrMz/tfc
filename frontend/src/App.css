@@ -252,6 +252,14 @@ nav a {
   
 }
 
+.logout {
+  background-color: red;
+  border-radius: 8%;
+  padding: 4px 8px;
+  color: #e1e1e1;
+  font-size: 1rem;
+}
+
 /* Estilos responsivos para pantallas más pequeñas */
 @media (max-width: 768px) {
   .menu-icon {
