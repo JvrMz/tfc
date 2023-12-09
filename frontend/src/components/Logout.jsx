@@ -1,8 +1,8 @@
 
 import { useNavigate } from 'react-router-dom';
 
-function Logout({ setUser }) {
-
+function Logout({ user, setUser }) {
+  const  { nombre } = user; 
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -19,7 +19,10 @@ function Logout({ setUser }) {
   };
 
   return (
-    <button className="logout" onClick={handleLogout}>Logout</button>
+    <div className="logout">
+        <p>Bienvenid@ { nombre }</p>
+        <button onClick={handleLogout}>Logout</button>
+    </div>
   );
 }
 

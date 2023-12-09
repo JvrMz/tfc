@@ -20,6 +20,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700;900&family=Roboto+Condensed:ital,wght@0,700;1,300&family=Shadows+Into+Light&display=swap');
 
+.header-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .header {
   display: flex;
   justify-content: center;
@@ -252,13 +257,31 @@ nav a {
   
 }
 
-.logout {
+.login-container a{
+  border-radius: 5px;
+  background-color: #407c8a;
+  color: #e1e1e1;
+  padding: 5px 8px;
+}
+.login-container a:hover{
+
+  color: #e7e7e7;
+
+}
+
+.logout p {
+  color: #0a4a58;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.logout button {
   background-color: red;
   border-radius: 8%;
   padding: 4px 8px;
   color: #e1e1e1;
   font-size: 1rem;
 }
+
 
 /* Estilos responsivos para pantallas más pequeñas */
 @media (max-width: 768px) {
@@ -316,7 +339,10 @@ nav a {
 
 .clase.seleccionada {
   background-color: #aaf;
+  font-weight: bold;
 }
+
+
 
 
 /* Semana */

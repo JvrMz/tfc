@@ -8,7 +8,7 @@ function Clase( {clase, seleccionada, onSelect} ) {
     const [count, setCount] = useState(0);
 
     const handleClick = () => {
-      console.log('Handle Click:', clase.id_clase);
+
       if (count < 30 && !seleccionada) {
         setCount((count) => count + 1);
         onSelect(clase.id_clase);
@@ -17,7 +17,8 @@ function Clase( {clase, seleccionada, onSelect} ) {
 
     return (
       <>
-        <div className={`clase ${seleccionada ? 'seleccionada' : ''}`} onClick={handleClick} >
+        <div className={`clase ${seleccionada ? 'seleccionada' : ''}`} 
+        onClick={handleClick} >
           <div className='clase-cabecera'>
             <h4>{hora}:00</h4>
             <img src={campana} alt="cargando tiempo" width="15px"/>
