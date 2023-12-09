@@ -34,6 +34,7 @@ async function loginUserController (req, res, next) {
 
 		res.send({
 			ok: true,
+			id: result.id_user,
 			nombre: result.nombre,
 			data: token, 
 			role: result.role,

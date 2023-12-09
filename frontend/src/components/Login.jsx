@@ -62,7 +62,8 @@ function Login () {
 
             if (resp.data.ok) {
                 setUser({
-                    username: resp.data.username,
+                    id: resp.data.id,
+                    nombre: resp.data.nombre,
                     token: resp.data.data,
                     role: resp.data.role,
                     cuota: resp.data.cuota

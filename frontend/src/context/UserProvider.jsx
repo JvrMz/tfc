@@ -4,7 +4,9 @@ const UserContext = createContext();
 
 function UserProvider ({ children }) {
     const [user, setUser] = useState(() => {
-        const userInfo = JSON.parse(localStorage.getItem('user')) || { username: null, token: null };
+        const userInfo = JSON.parse(localStorage.getItem('user')) || { nombre: null, token: null };
+      
+        console.log(userInfo);
 
         return userInfo;
     });

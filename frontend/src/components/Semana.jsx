@@ -1,9 +1,12 @@
 import { useState, useContext } from 'react';
 import { UserContext } from '../context/UserProvider';
 import ClaseList from './ClaseList.jsx';
+import sendUserClase from '../helpers/sendUserClase.js';
 
 function Semana() {
   const { user } = useContext(UserContext);
+
+  console.log(user);
 
   let numeroClasesPermitidas;
 
@@ -29,13 +32,22 @@ function Semana() {
   const [clasesSeleccionadasSemana, setClasesSeleccionadasSemana] = useState([]);
 
 
-  const handleSeleccionarClaseSemana = (dia, claseId) => {
+  const handleSeleccionarClaseSemana = async (dia, claseId) => {
     if (!clasesSeleccionadasPorDia[dia] && clasesSeleccionadasSemana.length < numeroClasesPermitidas) {
       setClasesSeleccionadasPorDia((prevClases) => ({
         ...prevClases,
         [dia]: [claseId],
       }));
       setClasesSeleccionadasSemana((prevClasesSemana) => [...prevClasesSemana, claseId]);
+
+      // Registro en userclase
+      try {
+        await sendUserClase(user.id, claseId);
+
+        console.log('Registrado en userclase');
+      } catch (error) {
+        console.error('Error al registrar en userclase', error);
+      }
     }
   };
 

@@ -9,6 +9,7 @@ const {
     getClasesByWeekController,
     getClasesMonthAndWeekController,
     getClasesByDayController,
+    addUserClaseController
  } = require('../controllers/clases');
 const authUser = require('../middlewares/authUser.js');
 
@@ -20,6 +21,7 @@ claseRouter.get('/semana/:semana', getClasesByWeekController);
 claseRouter.get('/mes/:mes/semana/:semana', getClasesMonthAndWeekController);
 claseRouter.get('/dia/:dia', getClasesByDayController);
 claseRouter.post('/clases', authUser, addClaseController);
+claseRouter.post('/userclase', addUserClaseController);
 
 
 module.exports = claseRouter;
