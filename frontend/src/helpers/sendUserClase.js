@@ -9,14 +9,12 @@ async function sendUserClase (userId, claseId) {
           id_clase: claseId,
         });
     
-        const data = response.data;
-        console.log(data);
-        // Posible usar toast, para mostrar mensaje de registro en clase correcto
+
         if (response) {
-          console.log(data.message);
+          // console.log(response.data.message);
         } 
       } catch (error) {
-        console.error(error);
+        // console.error(error);
       }
   }
 

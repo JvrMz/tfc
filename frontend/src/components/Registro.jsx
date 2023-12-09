@@ -1,4 +1,4 @@
-
+import MiToast from './MiToast.jsx';
 import { useState, useContext } from 'react';
 // import { UserContext } from '../context/UserProvider';
 import { useNavigate } from 'react-router-dom';
@@ -45,12 +45,20 @@ const Registro = () => {
         // Ver si pasar la foto de perfil
         try {
             const response = await axios.post(`${baseURL}/users`, datosUsuario );
-            console.log(response.data);
-            setTimeout(() => {
-                navigate('/registro');
-            }, 2000);
 
-            console.log(response.data);
+            if(response){
+                setTimeout(() => {
+                    navigate('/registro');
+                    setDatosUsuario({
+                        nombre: '',
+                        apellidos: '',
+                        email: '',
+                        cuota: ''
+                    });
+                }, 2000);
+                MiToast({ type: 'success', message: 'Usuario registrado!' });
+            }
+
         } catch (error) {
             console.error(error);
             setError(error.response.data || 'Error en el registro de sesión');
@@ -98,6 +106,7 @@ const Registro = () => {
                             <option value="seis">ilimitado</option>
                         </select>
                     </label>
+                    {/* Cuenta bancaria y foto de perfil */}
                     <input
                         type="file"
                         name="photo"

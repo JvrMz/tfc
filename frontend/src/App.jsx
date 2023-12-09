@@ -3,6 +3,9 @@ import Nav from './components/Nav.jsx'
 import MiMain from './components/MiMain.jsx'
 import Footer from './components/Footer.jsx'
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import UserProvider from './context/UserProvider.jsx'
 import './App.css'
 
@@ -15,6 +18,7 @@ function App() {
         <Nav />
         <MiMain />
         <Footer />
+        <ToastContainer />
       </UserProvider>
     </div>
   )

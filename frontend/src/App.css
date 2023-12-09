@@ -7,6 +7,13 @@
   /* background-color: #121B2E; */
 }
 
+/* Toast */
+
+.Toastify__toast--success {
+  background-color: #09738a; 
+  color: #e1e1e1; 
+}
+
 
 /* header */
 
@@ -398,7 +405,7 @@ nav a {
 
 h2 {
   text-align: center;
-  color: #333;
+  color: #407c8a;
 }
 
 input, select {

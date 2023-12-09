@@ -1,12 +1,14 @@
 import { useState, useContext } from 'react';
 import { UserContext } from '../context/UserProvider';
 import ClaseList from './ClaseList.jsx';
+import MiToast from './MiToast.jsx';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import sendUserClase from '../helpers/sendUserClase.js';
 
 function Semana() {
   const { user } = useContext(UserContext);
-
-  console.log(user);
+  
 
   let numeroClasesPermitidas;
 
@@ -44,10 +46,22 @@ function Semana() {
       try {
         await sendUserClase(user.id, claseId);
 
-        console.log('Registrado en userclase');
+        MiToast({ type: 'success', message: 'Te has apuntado a la clase!' });
+  
+        
+        
       } catch (error) {
-        console.error('Error al registrar en userclase', error);
+        // console.error('Error al registrar en userclase', error);
       }
+    }else{
+      toast.warning('¡Has alcanzado el límite de clases permitidas!', {
+        position: 'top-right',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     }
   };
 
