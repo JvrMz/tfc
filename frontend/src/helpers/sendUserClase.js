@@ -3,20 +3,35 @@ const baseURL = import.meta.env.VITE_API_URL;
 
 async function sendUserClase (userId, claseId) {
 
-    try {
-        const response = await axios.post(`${baseURL}/userclase`, {
-          id_user: userId,
+  try {
+      const response = await axios.post(`${baseURL}/userclase`, {
+        id_user: userId,
+        id_clase: claseId,
+      });
+  
+
+      if (response) {
+        // console.log(response.data.message);
+        await updateAforoActual(claseId);
+      } 
+    } catch (error) {
+      // console.error(error);
+    }
+}
+
+async function updateAforoActual(claseId) {
+  try {
+      const response = await axios.put(`${baseURL}/aforo`, {
           id_clase: claseId,
-        });
-    
+      });
 
-        if (response) {
+      if (response) {
           // console.log(response.data.message);
-        } 
-      } catch (error) {
-        // console.error(error);
       }
+  } catch (error) {
+      // Manejar el error
+      // console.error(error);
   }
-
+}
 
 export default sendUserClase;

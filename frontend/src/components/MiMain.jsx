@@ -7,6 +7,7 @@ import Login from './Login.jsx'
 import Registro from './Registro.jsx'
 import Reset from './Reset.jsx'
 import MainSection from '../pages/MainSection.jsx'
+import InfoAdmin from './InfoAdmin.jsx';
 
 function MiMain() {
 
@@ -21,6 +22,7 @@ function MiMain() {
             <Route path="/registro" element={<Registro/>} />
             <Route path="/reset/:registrationCode" element={<Reset/>} />
             <Route path="/usuarios" element={<MainSection/>} />
+            <Route path="/infoAdmin" element={<InfoAdmin/>} />
 
           </Routes>
          

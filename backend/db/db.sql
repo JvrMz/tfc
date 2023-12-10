@@ -55,6 +55,7 @@ CREATE TABLE IF NOT EXISTS usuarios_clases (
 	id_user INT UNSIGNED NOT NULL ,
 	id_clase INT UNSIGNED NOT NULL ,
     created_at datetime NOT NULL DEFAULT NOW(),
+    aforo_actual INT DEFAULT 0,
 
     PRIMARY KEY (id_user, id_clase, created_at),
     FOREIGN KEY (id_user) REFERENCES users (id_user) ON DELETE CASCADE ON UPDATE CASCADE,

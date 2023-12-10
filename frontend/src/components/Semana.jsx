@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import sendUserClase from '../helpers/sendUserClase.js';
 
+
 function Semana() {
   const { user } = useContext(UserContext);
   

@@ -1,5 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
-import MiToast from './MiToast.jsx';
+import { useState, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 const baseURL = import.meta.env.VITE_API_URL;
@@ -53,10 +52,8 @@ function Reset () {
 
             const resp = await axios.post(`${baseURL}/users/reset/${registrationCode}`, bodyToSend);
  
-            if(resp){
-                MiToast({ type: 'success', message: 'Contraseña registrada, puedes hacer login' });
-                navigate('/login');
-            }
+            navigate('/login');
+            
             
         } catch (error) {
             console.error(error.response.data);
