@@ -2,7 +2,6 @@
 const { sendQuery } = require('../../db/connectToDB');
 
 async function getUsersClassesController(req, res, next) {
-    console.log('desde getusers');
   const { id_clase } = req.params;
 
   try {

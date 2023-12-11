@@ -107,12 +107,12 @@ const Registro = () => {
                         </select>
                     </label>
                     {/* Cuenta bancaria y foto de perfil */}
-                    <input
+{/*                     <input
                         type="file"
                         name="photo"
                         onChange={handleChange}
                         accept="image/*"
-                    />
+                    /> */}
                     <button id="login" type="submit">Registrar</button>
                 </form>
             </div>
