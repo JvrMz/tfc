@@ -1,5 +1,5 @@
 
-function ClaseItem ({ user }) {
+function ClaseUsers ({ user }) {
 
     const  nombre  = user.nombre;
     const  apellidos  = user.apellidos;
@@ -15,4 +15,4 @@ function ClaseItem ({ user }) {
 }
 
 
-export default ClaseItem;
+export default ClaseUsers;

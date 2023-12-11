@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import getUsersInClasses from '../../helpers/getUsersClasses';
-import ClaseItem from  './ClaseItem';
+import ClaseUsers from  './ClaseUsers';
 
 function InfoClase({ claseId }) {
 
@@ -19,7 +19,7 @@ function InfoClase({ claseId }) {
     <div>
       <h2>Usuarios inscritos a la clase</h2>
       <ul className="lista-inscritos">
-        {usersInscritos?.map(user => <ClaseItem key={user.id} user={user} />)}
+        {usersInscritos?.map(user => <ClaseUsers key={user.id} user={user} />)}
       </ul>
     </div>
   );
