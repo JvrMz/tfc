@@ -8,13 +8,13 @@ async function addClaseController (req, res, next) {
 
     try {
 
-        const { dia, hora, semana, user_id, id_gym } = req.body;
+        const { dia, hora, semana, id_gym } = req.body;
 
         const results = await sendQuery(`
             INSERT INTO clases
-            (dia, hora, semana, user_id, id_gym)
+            (dia, hora, semana, id_gym)
             VALUES (?, ?, ?, ?, ?);
-            `, [dia, hora, semana, user_id, id_gym]
+            `, [dia, hora, semana, id_gym]
         );
 
         res.status(200).send({
