@@ -50,7 +50,7 @@ function Reset () {
             console.log(bodyToSend);
             console.log(registrationCode);
 
-            const resp = await axios.post(`${baseURL}/users/reset/${registrationCode}`, bodyToSend);
+            const resp = await axios.post(`${baseURL}/api/users/reset/${registrationCode}`, bodyToSend);
  
             navigate('/login');
             

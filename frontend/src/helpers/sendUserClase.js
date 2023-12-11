@@ -4,7 +4,7 @@ const baseURL = import.meta.env.VITE_API_URL;
 async function sendUserClase (userId, claseId) {
 
   try {
-      const response = await axios.post(`${baseURL}/userclase`, {
+      const response = await axios.post(`${baseURL}/api/userclase`, {
         id_user: userId,
         id_clase: claseId,
       });
@@ -21,7 +21,7 @@ async function sendUserClase (userId, claseId) {
 
 async function updateAforoActual(claseId) {
   try {
-      const response = await axios.put(`${baseURL}/aforo`, {
+      const response = await axios.put(`${baseURL}/api/aforo`, {
           id_clase: claseId,
       });
 

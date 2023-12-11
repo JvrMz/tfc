@@ -56,7 +56,7 @@ function Login () {
                 password: credenciales.password
             };
 
-            const resp = await axios.post(`${baseURL}/users/login`, bodyToSend);
+            const resp = await axios.post(`${baseURL}/api/users/login`, bodyToSend);
             // Si la respuesta informa que el usuario es admin podrá registrar más usuarios. Sino puede gestionar sus clases para inscribirse
 
 

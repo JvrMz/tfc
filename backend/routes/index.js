@@ -6,7 +6,7 @@ const userRouter = require('./userRouter');
 const claseRouter = require('./claseRouter');
 
 // Establezco las rutas en un middleware.
-router.use(userRouter);
-router.use(claseRouter);
+router.use('/api',userRouter);
+router.use('/api',claseRouter);
 
 module.exports = router;
