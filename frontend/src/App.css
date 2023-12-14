@@ -48,7 +48,7 @@
 /* Footer */
 
 .footer {
-  background-color: var(-color-fondo-footer);
+  background-color: var(--color-fondo-footer);
   font-style: oblique;
   min-height: 80px;
   margin: 0;
