@@ -25,7 +25,6 @@ function Login () {
 
     const [error, setError] = useState('');
 
-    console.log(credenciales);
 
     const handleChange = (e) => {
  

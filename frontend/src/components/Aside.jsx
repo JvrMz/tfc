@@ -6,6 +6,7 @@ import { UserContext } from '../context/UserProvider';
 function Aside() {
   const { user } = useContext(UserContext);
   const isAdmin = user.role === 'admin';
+  const isUser = user.role === 'normal';
 
     return (
       <div className="aside">
@@ -23,7 +24,20 @@ function Aside() {
             </Link>
           </div>
         )}
+      
+        {isUser && (
+          
+        <div className="aside-section">
+          <Link to="/perfil">
+            <button className='aside-button'>Mi Perfil</button>
+          </Link>
+          <Link to="/usuarios">
+            <button className='aside-button'>Clases</button>
+          </Link>
+        </div>
 
+        )} 
+        
         
       </div>
     )

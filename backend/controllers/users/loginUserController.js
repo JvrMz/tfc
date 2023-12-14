@@ -5,7 +5,7 @@ const { sendQuery } = require('../../db/connectToDB.js');
 async function loginUserController (req, res, next) {
 
 	const { email, password } = req.body;
-	console.log(password);
+
 	try {
 		const [result] = await sendQuery(
 			'SELECT * FROM users WHERE email = ?', [email]

@@ -20,8 +20,6 @@ const Registro = () => {
         cuota: ''
     });
 
-    console.log(datosUsuario);
-
     const handleChange = (e) => {
         setDatosUsuario({
             ...datosUsuario,

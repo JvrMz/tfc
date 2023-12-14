@@ -20,7 +20,6 @@ async function sendEmail (email, subject, emailHtml) {
     };
 
     try {
-        console.log('se envia mail');
         await transport.sendMail(emailOptions);
     } catch (error) {
         throw new Error(error);

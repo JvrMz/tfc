@@ -19,7 +19,7 @@ function Nav() {
         </div>
         <div className={`nav-links ${showMenu ? 'open' : ''}`}>
           <Link to="/">Home</Link>
-          <Link to="">Gimnasios</Link>
+          <Link to="/info">Gimnasio</Link>
         </div>
       </nav>
     );

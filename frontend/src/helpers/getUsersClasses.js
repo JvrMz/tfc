@@ -2,7 +2,7 @@ import axios from 'axios';
 const baseURL = import.meta.env.VITE_API_URL;
 
 async function getUsersInClasses (claseId) {
-    console.log('desde getuser front')
+    
     try {
 
       const response = await axios.get(`${baseURL}/api/usersclass/${claseId}`);
