@@ -42,7 +42,7 @@ const Registro = () => {
 
         // Ver si pasar la foto de perfil
         try {
-            const response = await axios.post(`${baseURL}/users`, datosUsuario );
+            const response = await axios.post(`${baseURL}/api/users`, datosUsuario );
 
             if(response){
                 setTimeout(() => {
